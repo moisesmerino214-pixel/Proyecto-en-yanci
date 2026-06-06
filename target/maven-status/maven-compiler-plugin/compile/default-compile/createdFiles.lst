@@ -75,7 +75,6 @@ test\GestionZapateria.class
 vista\InventarioView$5.class
 vista\VentasView$1.class
 DAO\ClienteDAO.class
-vistaVendedor\VentasView$4.class
 vista\ProveedoresView$2.class
 vista\ViewProducto$11.class
 controladorVendedor\InventarioVendedorController.class

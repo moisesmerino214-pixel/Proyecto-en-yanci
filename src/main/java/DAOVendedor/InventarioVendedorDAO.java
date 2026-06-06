@@ -30,7 +30,9 @@ public class InventarioVendedorDAO {
         ps.setString(1, "%" + criterio + "%");
         ResultSet rs = ps.executeQuery();
         llenarTabla(tabla, rs);
-        rs.close(); ps.close(); conn.close();
+        rs.close(); 
+        ps.close(); 
+        conn.close();
     }
    
    private void llenarTabla(javax.swing.JTable tabla, ResultSet rs) throws Exception {

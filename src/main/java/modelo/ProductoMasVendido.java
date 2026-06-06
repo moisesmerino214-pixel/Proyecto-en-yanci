@@ -58,7 +58,9 @@ public class ProductoMasVendido implements Comparable<ProductoMasVendido> {
     
     @Override
     public int compareTo(ProductoMasVendido o) {
-        return Integer.compare(o.paresVendidos, this.paresVendidos);
+        int cmp = Integer.compare(o.paresVendidos, this.paresVendidos);
+        if (cmp == 0) return Integer.compare(this.id, o.id);
+        return cmp;
     }
     
 }

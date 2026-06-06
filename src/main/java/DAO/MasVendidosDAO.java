@@ -18,8 +18,7 @@ import modelo.ProductoMasVendido;
  */
 public class MasVendidosDAO implements MasVendidosInterface {
     
-    private static final String SELECT_TOP_VENDIDOS = "SELECT p.id_producto, p.nombre_comercial, p.precio_venta, SUM(v.cantidad) as total_vendido " + "FROM productos p " + "JOIN ventas v ON p.nombre_comercial = v.producto " + "GROUP BY p.id_producto, p.nombre_comercial, p.precio_venta " + "ORDER BY total_vendido DESC";
-    
+    private static final String SELECT_TOP_VENDIDOS = "SELECT p.id_producto, p.nombre_comercial, p.precio_venta, " + "SUM(dv.cantidad) as total_vendido " + "FROM productos p " + "JOIN inventario i ON p.id_producto = i.id_producto " + "JOIN detalleventas dv ON i.id_inventario = dv.id_inventario " + "GROUP BY p.id_producto, p.nombre_comercial, p.precio_venta " + "ORDER BY total_vendido DESC";
     
     @Override
     public ArbolBBusqueda<ProductoMasVendido> listarMasVendidos() throws Exception {

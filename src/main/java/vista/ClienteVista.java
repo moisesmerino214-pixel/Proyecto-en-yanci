@@ -7,7 +7,7 @@ package vista;
 
 /**
  *
- * @author Henry
+ * @author elmer
  */
 public class ClienteVista extends javax.swing.JFrame {
     /**
@@ -88,7 +88,7 @@ public class ClienteVista extends javax.swing.JFrame {
 
         btnLimpiar.setText("Limpiar");
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
         jLabel1.setText("GESTION DE CLIENTES");
 
@@ -186,7 +186,7 @@ public class ClienteVista extends javax.swing.JFrame {
                     .addComponent(btnEliminar)
                     .addComponent(btnLimpiar)
                     .addComponent(btnSalir))
-                .addGap(41, 41, 41))
+                .addGap(22, 22, 22))
         );
 
         pack();

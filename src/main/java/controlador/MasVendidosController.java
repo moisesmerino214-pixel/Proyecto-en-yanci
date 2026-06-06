@@ -63,7 +63,7 @@ public class MasVendidosController implements ActionListener {
         modelo.addRow(new Object[]{
             p.getNombre(),
             "Calzado",
-            p.getPrecio(),
+            String.format("$%.2f", p.getPrecio()),
             p.getParesVendidos()
         });
         recorrerInOrden((Nodo<ProductoMasVendido>) nodo.getrDrch(), modelo);

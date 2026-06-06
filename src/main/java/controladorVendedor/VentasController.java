@@ -51,8 +51,7 @@ public class VentasController implements ActionListener {
                 view.comboTalla.removeAllItems();
  
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(view,
-                    "Error al cargar colores/precio:\n" + ex.getMessage());
+                JOptionPane.showMessageDialog(view, "Error al cargar colores/precio:\n" + ex.getMessage());
             }
         });
         
@@ -74,7 +73,8 @@ public class VentasController implements ActionListener {
         view.btnEliminar.addActionListener(this);
         view.btnRealizarVenta.addActionListener(this);
         view.btnSalir.addActionListener(this);
-        view.btnModificar.setEnabled(false);
+        view.btnAgregarNuevo.addActionListener(e -> agregarClienteRapido());
+        
     }
     
     @Override
@@ -87,6 +87,49 @@ public class VentasController implements ActionListener {
             menu.setVisible(true);
         }
     }
+    
+    private void agregarClienteRapido() {
+    javax.swing.JTextField txtNombre   = new javax.swing.JTextField();
+    javax.swing.JTextField txtDui      = new javax.swing.JTextField();
+    javax.swing.JTextField txtTelefono = new javax.swing.JTextField();
+    javax.swing.JTextField txtCorreo   = new javax.swing.JTextField();
+
+    Object[] campos = {
+        "Nombre:",   txtNombre,
+        "DUI:",      txtDui,
+        "Teléfono:", txtTelefono,
+        "Correo:",   txtCorreo
+    };
+
+    int resultado = JOptionPane.showConfirmDialog(
+        view, campos, "Agregar Cliente Nuevo",
+        JOptionPane.OK_CANCEL_OPTION
+    );
+
+    if (resultado == JOptionPane.OK_OPTION) {
+        String nombre = txtNombre.getText().trim();
+        if (nombre.isEmpty()) {
+            JOptionPane.showMessageDialog(view, "El nombre es obligatorio.");
+            return;
+        }
+        try {
+            DAO.ClienteDAO clienteDAO = new DAO.ClienteDAO();
+            modelo.Cliente c = new modelo.Cliente(
+                0,
+                nombre,
+                txtDui.getText().trim(),
+                txtTelefono.getText().trim(),
+                txtCorreo.getText().trim()
+            );
+            clienteDAO.agregar(c);
+            dao.cargarClientes(view.comboCliente);
+            view.comboCliente.setSelectedIndex(view.comboCliente.getItemCount() - 1);
+            JOptionPane.showMessageDialog(view, "Cliente agregado correctamente.");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(view, "Error al agregar cliente:\n" + ex.getMessage());
+        }
+    }
+}
     
     private void agregarAlCarrito() {
         if (view.comboProducto.getSelectedItem() == null) {
@@ -248,6 +291,8 @@ public class VentasController implements ActionListener {
             return new SimpleDateFormat("yyyy-MM-dd").format(view.calendario.getDate());
         return new SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date());
     }
+    
+    
  
     private void limpiarFormulario() {
         view.txtCantidad.setText("");

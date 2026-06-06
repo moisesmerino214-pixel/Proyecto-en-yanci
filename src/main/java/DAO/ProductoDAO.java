@@ -21,7 +21,7 @@ import javax.swing.JComboBox;
 public class ProductoDAO implements ProductoInterfaz {
     private static final String SELECT_ALL = "SELECT i.id_inventario, p.modelo, i.talla, i.stock, p.marca, i.color, p.precio_venta, i.id_producto " + "FROM inventario i JOIN productos p ON i.id_producto = p.id_producto " + "ORDER BY i.id_inventario ASC";
     private static final String SELECT_BY_ID = "SELECT i.id_inventario, p.modelo, i.talla, i.stock, p.marca, i.color, p.precio_venta, i.id_producto " + "FROM inventario i JOIN productos p ON i.id_producto = p.id_producto " + "WHERE i.id_inventario = ?";
-   private static final String INSERT = "INSERT INTO inventario (id_producto, color, talla, stock) VALUES (?, ?, ?, ?)";
+    private static final String INSERT = "INSERT INTO inventario (id_producto, color, talla, stock) VALUES (?, ?, ?, ?)";
     private static final String UPDATE_INVENTARIO = "UPDATE inventario SET color=?, talla=?, stock=? WHERE id_inventario=?";
     private static final String UPDATE_PRODUCTO = "UPDATE productos SET modelo=?, precio_venta=? WHERE id_producto=?";
     private static final String DELETE = "DELETE FROM inventario WHERE id_inventario=?";
