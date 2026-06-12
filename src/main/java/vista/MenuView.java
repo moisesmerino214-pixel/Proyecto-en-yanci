@@ -39,7 +39,6 @@ public class MenuView extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         btnVentas = new javax.swing.JButton();
         btnMasVendidos = new javax.swing.JButton();
@@ -47,7 +46,6 @@ public class MenuView extends javax.swing.JFrame {
         btnProducto = new javax.swing.JButton();
         btnEmpleado = new javax.swing.JButton();
         btnProveedor = new javax.swing.JButton();
-        btnStock = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -112,9 +110,6 @@ public class MenuView extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(51, 51, 51));
         jLabel8.setText("Gestion De Proveedores");
 
-        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel9.setText("Alerta de Stock");
-
         jLabel10.setForeground(new java.awt.Color(51, 51, 51));
 
         btnVentas.setBackground(new java.awt.Color(255, 255, 255));
@@ -171,15 +166,6 @@ public class MenuView extends javax.swing.JFrame {
             }
         });
 
-        btnStock.setBackground(new java.awt.Color(255, 255, 255));
-        btnStock.setForeground(new java.awt.Color(0, 102, 153));
-        btnStock.setText("Abrir");
-        btnStock.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnStockActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -214,12 +200,6 @@ public class MenuView extends javax.swing.JFrame {
                                 .addComponent(btnInventario)))
                         .addGap(31, 31, 31))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(btnStock)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,15 +242,9 @@ public class MenuView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnEmpleado)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnStock))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnProveedor)))
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnProveedor)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -338,10 +312,6 @@ public class MenuView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnProveedorActionPerformed
 
-    private void btnStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStockActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnStockActionPerformed
-
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -351,7 +321,6 @@ public class MenuView extends javax.swing.JFrame {
     public javax.swing.JButton btnMasVendidos;
     public javax.swing.JButton btnProducto;
     public javax.swing.JButton btnProveedor;
-    public javax.swing.JButton btnStock;
     public javax.swing.JButton btnVentas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -362,7 +331,6 @@ public class MenuView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

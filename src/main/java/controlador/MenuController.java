@@ -33,7 +33,6 @@ public class MenuController implements ActionListener{
         this.vista.btnInventario.addActionListener(this);
         this.vista.btnProducto.addActionListener(this);
         this.vista.btnEmpleado.addActionListener(this);
-        this.vista.btnStock.addActionListener(this);
         this.vista.btnProveedor.addActionListener(this);
         
         this.vista.btnCliente.setActionCommand("Cliente");
@@ -42,7 +41,6 @@ public class MenuController implements ActionListener{
         this.vista.btnInventario.setActionCommand("Inventario");
         this.vista.btnProducto.setActionCommand("Productos");
         this.vista.btnEmpleado.setActionCommand("Empleado");
-        this.vista.btnStock.setActionCommand("Stock");
         this.vista.btnProveedor.setActionCommand("Proveedor");
     }
     
@@ -100,11 +98,6 @@ public class MenuController implements ActionListener{
               new EmpeladoController(empleado);
             empleado.setVisible(true);
             break;
-            
-           /* case "Stock":
-              ();
-            vistaCliente.setVisible(true);
-            break;*/
             
             case "Proveedor":
               ProveedoresView proveedor = new ProveedoresView();

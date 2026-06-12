@@ -1,7 +1,7 @@
 package controlador;
 
 import DAO.ProductoDAO;
-import arbol.ArbolBBusqueda;
+import arbol.ArbolAVL;
 import arbol.Nodo;
 import interfaz.ProductoInterfaz;
 import java.awt.event.ActionEvent;
@@ -14,12 +14,12 @@ import vista.ViewProducto;
 public class ProductoController implements ActionListener {
 private final ViewProducto       vista;
     private final ProductoInterfaz   dao;
-    private ArbolBBusqueda<Producto> arbol;
+    private ArbolAVL arbol;
 
     public ProductoController(ViewProducto vista) {
         this.vista = vista;
         this.dao   = new ProductoDAO();
-        this.arbol = new ArbolBBusqueda<>();
+        this.arbol = new ArbolAVL();
 
         try {
             dao.cargarMarcas(vista.cmbMarca);

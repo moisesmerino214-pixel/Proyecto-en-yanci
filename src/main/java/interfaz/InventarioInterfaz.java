@@ -4,7 +4,7 @@
  */
 package interfaz;
 
-import arbol.ArbolBBusqueda;
+import arbol.ArbolAVL;
 import modelo.Inventario;
 
 /**
@@ -12,7 +12,7 @@ import modelo.Inventario;
  * @author moise
  */
 public interface InventarioInterfaz {
-    ArbolBBusqueda<Inventario> listar() throws Exception;
+    ArbolAVL listar() throws Exception;
     void registrar(Inventario inv) throws Exception;
     void modificar(Inventario inv) throws Exception;
     void eliminar(int id) throws Exception;

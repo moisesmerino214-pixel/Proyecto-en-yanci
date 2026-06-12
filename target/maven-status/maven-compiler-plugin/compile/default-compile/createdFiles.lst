@@ -22,6 +22,7 @@ modelo\Usuario.class
 vista\VistaInicio$1.class
 DAO\UsuarioDAO.class
 modelo\Proveedor.class
+arbol\ArbolAVL.class
 controlador\GestionVentasController.class
 modeloVendedor\Ventas.class
 vista\ViewProducto$5.class
@@ -41,7 +42,6 @@ interfaz\InventarioInterfaz.class
 vistaVendedor\VentasView.class
 vistaVendedor\MenuVendedorView$2.class
 DAO\InventarioDAO.class
-vista\MenuView$8.class
 vista\ViewProducto$6.class
 vista\ViewProducto.class
 interfaz\GestionVentasInterfaz.class

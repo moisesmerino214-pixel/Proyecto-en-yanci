@@ -10,8 +10,8 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
 import vista.InventarioView;
 import DAO.InventarioDAO;
+import arbol.ArbolAVL;
 import modelo.Inventario;
-import arbol.ArbolBBusqueda;
 import arbol.Nodo;
 import java.text.DecimalFormat;
 
@@ -23,13 +23,13 @@ import java.text.DecimalFormat;
 public class InventarioController implements ActionListener {
     private final InventarioView vista;
     private final InventarioDAO  dao;
-    private ArbolBBusqueda<Inventario> arbol;
+    private ArbolAVL arbol;
     private final DecimalFormat df = new DecimalFormat("0.00");
 
     public InventarioController(InventarioView vista, InventarioDAO dao) {
         this.vista = vista;
         this.dao   = dao;
-        this.arbol = new ArbolBBusqueda<>();
+        this.arbol = new ArbolAVL();
 
         try {
             dao.cargarProductos(vista.comboProducto);

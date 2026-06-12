@@ -4,7 +4,7 @@
  */
 package interfaz;
 
-import arbol.ArbolBBusqueda;
+import arbol.ArbolAVL;
 import modelo.Producto;
 
 /**
@@ -13,7 +13,7 @@ import modelo.Producto;
  */
 public interface ProductoInterfaz {
  
-    ArbolBBusqueda<Producto> listar() throws Exception;
+    ArbolAVL listar() throws Exception;
     void agregar(Producto p) throws Exception;
     void modificar(Producto p) throws Exception;
     void eliminar(int id) throws Exception;

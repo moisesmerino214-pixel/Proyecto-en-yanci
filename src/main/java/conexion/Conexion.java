@@ -14,7 +14,7 @@ import java.sql.DriverManager;
 public class Conexion {
      private static final String URL = "jdbc:postgresql://localhost:5432/zapateria";
     private static final String USER = "postgres";
-    private static final String PASS = "12345";
+    private static final String PASS = "1234";
 
     public static Connection getConexion() throws Exception {
         return DriverManager.getConnection(URL, USER, PASS);

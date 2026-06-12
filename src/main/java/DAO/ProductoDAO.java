@@ -4,7 +4,7 @@
  */
 package DAO;
 
-import arbol.ArbolBBusqueda;
+import arbol.ArbolAVL;
 import conexion.Conexion;
 import interfaz.ProductoInterfaz;
 import modelo.Producto;
@@ -29,10 +29,10 @@ public class ProductoDAO implements ProductoInterfaz {
     private static final String SELECT_COLORES = "SELECT DISTINCT color FROM inventario ORDER BY color ASC";
     
     @Override
-    public ArbolBBusqueda<Producto> listar() throws Exception {
-        ArbolBBusqueda<Producto> arbol = new ArbolBBusqueda<>();
-        try (Connection conn = Conexion.getConexion();
-             PreparedStatement ps = conn.prepareStatement(SELECT_ALL);
+    public ArbolAVL listar() throws Exception {
+        ArbolAVL arbol = new ArbolAVL();
+        try (Connection conn = Conexion.getConexion(); 
+                PreparedStatement ps = conn.prepareStatement(SELECT_ALL);
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 Producto p = new Producto();

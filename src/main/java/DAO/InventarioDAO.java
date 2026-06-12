@@ -10,16 +10,11 @@ package DAO;
 
 
 
-import arbol.ArbolBBusqueda;
-
+import arbol.ArbolAVL;
 import conexion.Conexion;
-
 import modelo.Inventario;
-
 import java.sql.Connection;
-
 import java.sql.PreparedStatement;
-
 import java.sql.ResultSet;
 import javax.swing.JComboBox;
 
@@ -42,8 +37,8 @@ public class InventarioDAO {
     private static final String UPDATE_PRECIO = "UPDATE productos SET precio_venta=? WHERE id_producto=?";
     private static final String DELETE_DETALLES = "DELETE FROM detalleventas WHERE id_inventario=?";
 
-    public ArbolBBusqueda<Inventario> listar() throws Exception {
-        ArbolBBusqueda<Inventario> arbol = new ArbolBBusqueda<>();
+    public ArbolAVL listar() throws Exception {
+        ArbolAVL arbol = new ArbolAVL();
         try (Connection conn = Conexion.getConexion();
              PreparedStatement ps = conn.prepareStatement(SELECT_ALL);
              ResultSet rs = ps.executeQuery()) {

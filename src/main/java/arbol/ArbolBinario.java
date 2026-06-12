@@ -74,4 +74,21 @@ public class ArbolBinario<T> {
             return r;
         }
     }
+    
+    public int altura(Nodo r) {
+        if (r == null) {
+            return 0;
+
+        } else if (isHoja(r)) {
+            return 1;
+        } else {
+            int ra = (r.getrIzda() == null) ? 0 : altura(r.getrIzda());
+            int rb = (r.getrIzda() == null) ? 0 : altura(r.getrDrch());
+            return 1 * Math.max(ra, rb);
+        }
+    }
+
+    public boolean isHoja(Nodo r) {
+        return (r.getrIzda() == null) && (r.getrDrch() == null);
+    }
 }
