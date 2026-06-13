@@ -13,16 +13,21 @@ public class Usuario implements Comparable<Usuario>{
     private String nombreUsuario;
     private String contrasena;
     private int idRol;
+    private int idVendedor;
+    private String nombreVendedor;
 
     public Usuario() {
     }
 
-    public Usuario(int idUsuario, String nombreUsuario, String contrasena, int idRol) {
+    public Usuario(int idUsuario, String nombreUsuario, String contrasena, int idRol, int idVendedor, String nombreVendedor) {
         this.idUsuario = idUsuario;
         this.nombreUsuario = nombreUsuario;
         this.contrasena = contrasena;
         this.idRol = idRol;
+        this.idVendedor = idVendedor;
+        this.nombreVendedor = nombreVendedor;
     }
+
 
     public int getIdUsuario() {
         return idUsuario;
@@ -54,6 +59,22 @@ public class Usuario implements Comparable<Usuario>{
 
     public void setIdRol(int idRol) {
         this.idRol = idRol;
+    }
+
+    public int getIdVendedor() {
+        return idVendedor;
+    }
+
+    public void setIdVendedor(int idVendedor) {
+        this.idVendedor = idVendedor;
+    }
+
+    public String getNombreVendedor() {
+        return nombreVendedor;
+    }
+
+    public void setNombreVendedor(String nombreVendedor) {
+        this.nombreVendedor = nombreVendedor;
     }
 
     @Override

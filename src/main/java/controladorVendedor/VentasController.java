@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import modelo.Usuario;
 import modeloVendedor.DetalleVenta;
 import modeloVendedor.Ventas;
 import vistaVendedor.VentasView;
@@ -25,16 +26,17 @@ public class VentasController implements ActionListener {
      private VentasInterfaz dao;
      private ArbolBBusqueda<DetalleVenta> carrito = new ArbolBBusqueda<>();
      private int contadorCarrito = 0;
-     private vistaVendedor.MenuVendedorView menu;
+     private Usuario vendedorActivo;
 
-    public VentasController(VentasView view, vistaVendedor.MenuVendedorView menu) {
+    public VentasController(VentasView view, Usuario vendedorActivo) {
         this.view = view;
-        this.menu = menu;
         this.dao = new VentasDAO();
+        this.vendedorActivo = vendedorActivo;
+
+        view.lblBienvenido.setText("Bienvenido, " + vendedorActivo.getNombreVendedor());
         
         try {
             dao.cargarClientes(view.comboCliente);
-            dao.cargarVendedores(view.comboVendedor);
             dao.cargarProductos(view.comboProducto);
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(view, "Error al cargar datos iniciales:\n" + ex.getMessage());
@@ -72,21 +74,30 @@ public class VentasController implements ActionListener {
         view.btnAgregar.addActionListener(this);
         view.btnEliminar.addActionListener(this);
         view.btnRealizarVenta.addActionListener(this);
-        view.btnSalir.addActionListener(this);
+        view.btnInventario.addActionListener(this);
         view.btnAgregarNuevo.addActionListener(e -> agregarClienteRapido());
-        
     }
-    
+                
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == view.btnAgregar)       agregarAlCarrito();
         if (e.getSource() == view.btnEliminar)      eliminarDelCarrito();
         if (e.getSource() == view.btnRealizarVenta) realizarVenta();
-        if (e.getSource() == view.btnSalir) { 
-            view.dispose();  
-            menu.setVisible(true);
-        }
+        if (e.getSource() == view.btnInventario)    abrirInventario();
     }
+    
+    
+    private void abrirInventario() {
+        view.setVisible(false);
+        javax.swing.JFrame frame = new javax.swing.JFrame("Inventario de Calzado");
+        vistaVendedor.InventarioVendedor panel = new vistaVendedor.InventarioVendedor();
+        new controladorVendedor.InventarioVendedorController(panel, view);
+        frame.add(panel);
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);  
+    }
+    
     
     private void agregarClienteRapido() {
     javax.swing.JTextField txtNombre   = new javax.swing.JTextField();
@@ -224,15 +235,11 @@ public class VentasController implements ActionListener {
         if (view.comboCliente.getSelectedItem() == null) {
             JOptionPane.showMessageDialog(view, "Seleccione un cliente."); return;
         }
-        if (view.comboVendedor.getSelectedItem() == null) {
-            JOptionPane.showMessageDialog(view, "Seleccione un vendedor."); return;
-        }
  
         try {
             int idCliente  = Integer.parseInt(
                 view.comboCliente.getSelectedItem().toString().split(" - ")[0].trim());
-            int idVendedor = Integer.parseInt(
-                view.comboVendedor.getSelectedItem().toString().split(" - ")[0].trim());
+            int idVendedor = vendedorActivo.getIdVendedor();
 
             double total = 0;
             for (Object obj : carrito.IND()) {
@@ -298,7 +305,6 @@ public class VentasController implements ActionListener {
         view.txtCantidad.setText("");
         view.txtPrecio.setText("");
         view.comboCliente.setSelectedIndex(0);
-        view.comboVendedor.setSelectedIndex(0);
         view.comboProducto.setSelectedIndex(0);
         view.comboColor.removeAllItems();
         view.comboTalla.removeAllItems();

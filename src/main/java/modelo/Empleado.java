@@ -14,17 +14,21 @@ public class Empleado implements Comparable<Empleado>{
     private String telefono;
     private String correo;
     private String cargo; 
+    private String nombreUsuario;
 
     public Empleado() {
     }
 
-    public Empleado(int idEmpleado, String nombre, String telefono, String correo, String cargo) {
+    public Empleado(int idEmpleado, String nombre, String telefono, String correo, String cargo, String nombreUsuario) {
         this.idEmpleado = idEmpleado;
         this.nombre = nombre;
         this.telefono = telefono;
         this.correo = correo;
         this.cargo = cargo;
+        this.nombreUsuario = nombreUsuario;
     }
+
+    
 
     public int getIdEmpleado() {
         return idEmpleado;
@@ -65,6 +69,16 @@ public class Empleado implements Comparable<Empleado>{
     public void setCargo(String cargo) {
         this.cargo = cargo;
     }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+    
+    
 
     @Override
     public int compareTo(Empleado o) {

@@ -13,7 +13,6 @@ D:\moise\Documents\NetBeansProjects\Proyecto_Final\GestionZapateria\src\main\jav
 D:\moise\Documents\NetBeansProjects\Proyecto_Final\GestionZapateria\src\main\java\controlador\ProveedorController.java
 D:\moise\Documents\NetBeansProjects\Proyecto_Final\GestionZapateria\src\main\java\controlador\UsuarioController.java
 D:\moise\Documents\NetBeansProjects\Proyecto_Final\GestionZapateria\src\main\java\controladorVendedor\InventarioVendedorController.java
-D:\moise\Documents\NetBeansProjects\Proyecto_Final\GestionZapateria\src\main\java\controladorVendedor\MenuVendedorController.java
 D:\moise\Documents\NetBeansProjects\Proyecto_Final\GestionZapateria\src\main\java\controladorVendedor\VentasController.java
 D:\moise\Documents\NetBeansProjects\Proyecto_Final\GestionZapateria\src\main\java\DAO\ClienteDAO.java
 D:\moise\Documents\NetBeansProjects\Proyecto_Final\GestionZapateria\src\main\java\DAO\Conexion.java
@@ -60,5 +59,4 @@ D:\moise\Documents\NetBeansProjects\Proyecto_Final\GestionZapateria\src\main\jav
 D:\moise\Documents\NetBeansProjects\Proyecto_Final\GestionZapateria\src\main\java\vista\ViewProducto.java
 D:\moise\Documents\NetBeansProjects\Proyecto_Final\GestionZapateria\src\main\java\vista\VistaInicio.java
 D:\moise\Documents\NetBeansProjects\Proyecto_Final\GestionZapateria\src\main\java\vistaVendedor\InventarioVendedor.java
-D:\moise\Documents\NetBeansProjects\Proyecto_Final\GestionZapateria\src\main\java\vistaVendedor\MenuVendedorView.java
 D:\moise\Documents\NetBeansProjects\Proyecto_Final\GestionZapateria\src\main\java\vistaVendedor\VentasView.java

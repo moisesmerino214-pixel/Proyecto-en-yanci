@@ -35,7 +35,7 @@ public class InventarioVendedor extends javax.swing.JPanel {
         btnBusacr = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaInventario = new javax.swing.JTable();
-        btnSalir = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaInventario1 = new javax.swing.JTable();
 
@@ -75,7 +75,7 @@ public class InventarioVendedor extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tablaInventario);
 
-        btnSalir.setText("Salir");
+        btnRegresar.setText("Regresar");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -94,7 +94,7 @@ public class InventarioVendedor extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnBusacr)
                         .addGap(18, 18, 18)
-                        .addComponent(btnSalir)
+                        .addComponent(btnRegresar)
                         .addGap(0, 152, Short.MAX_VALUE))))
             .addComponent(jScrollPane1)
         );
@@ -108,7 +108,7 @@ public class InventarioVendedor extends javax.swing.JPanel {
                     .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
                     .addComponent(btnBusacr)
-                    .addComponent(btnSalir))
+                    .addComponent(btnRegresar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -182,7 +182,7 @@ public class InventarioVendedor extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnBusacr;
-    public javax.swing.JButton btnSalir;
+    public javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel9;

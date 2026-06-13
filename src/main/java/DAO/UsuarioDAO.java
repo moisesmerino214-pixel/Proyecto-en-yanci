@@ -16,7 +16,7 @@ import modelo.Usuario;
  * @author moise
  */
 public class UsuarioDAO implements UsuarioInterfaz{
-    private static final String SELECT_ALL = "SELECT id_usuario, nombre_usuario, contrasena, id_rol FROM usuarios ORDER BY nombre_usuario";
+    private static final String SELECT_ALL = "SELECT u.id_usuario, u.nombre_usuario, u.contrasena, u.id_rol, " + "u.id_vendedor, v.nombre_vendedor " + "FROM usuarios u " + "LEFT JOIN vendedores v ON v.id_vendedor = u.id_vendedor";
 
     @Override
     public ArbolBBusqueda<Usuario> listar() throws Exception {
@@ -34,6 +34,8 @@ public class UsuarioDAO implements UsuarioInterfaz{
             usuario.setNombreUsuario(rs.getString("nombre_usuario"));
             usuario.setContrasena(rs.getString("contrasena")); 
             usuario.setIdRol(rs.getInt("id_rol"));
+            usuario.setIdVendedor(rs.getInt("id_vendedor"));
+            usuario.setNombreVendedor(rs.getString("nombre_vendedor"));
             arbol.insertar(usuario);
         }
         

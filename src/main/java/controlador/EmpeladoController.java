@@ -77,7 +77,8 @@ public class EmpeladoController implements ActionListener {
             emp.getNombre(),
             emp.getTelefono(),
             emp.getCorreo(),
-            emp.getCargo()
+            emp.getCargo(),
+            emp.getNombreUsuario()
         });
         recorrerInOrden(nodo.getrDrch(), modelo);
     }
@@ -87,23 +88,27 @@ public class EmpeladoController implements ActionListener {
             vista.txtNombre.setText(String.valueOf(vista.tablaEmpleado.getValueAt(fila, 1)));
             vista.txtTelefono.setText(String.valueOf(vista.tablaEmpleado.getValueAt(fila, 2)));
             vista.txtCorreo.setText(String.valueOf(vista.tablaEmpleado.getValueAt(fila, 3)));
-
-            String cargo = String.valueOf(vista.tablaEmpleado.getValueAt(fila, 4));
-            if (cargo.equalsIgnoreCase("Vendedor")) {
-                vista.radioVendedor.setSelected(true);
-            } else {
-                vista.radioVendedor.setSelected(false);
-            }
+            vista.radioVendedor.setSelected(true);
+            vista.txtUsuario.setText(String.valueOf(vista.tablaEmpleado.getValueAt(fila, 5)));
+            vista.txtContraseña.setText("");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(vista, "Error al seleccionar registro:\n" + ex.getMessage());
         }
     }
 
     private void guardar() {
-        if (!validarCampos()) return;
+        if (!validarCampos()) {
+            return;
+        }
         try {
-            dao.agregar(construirDesdeFormulario(0));
-            JOptionPane.showMessageDialog(vista, "Empleado guardado correctamente.");
+            String usuario = vista.txtUsuario.getText().trim();
+            String contrasena = vista.txtContraseña.getText().trim();
+            if (usuario.isEmpty() || contrasena.isEmpty()) {
+                JOptionPane.showMessageDialog(vista, "Usuario y contraseña son obligatorios.");
+                return;
+            }
+            dao.agregar(construirDesdeFormulario(0), usuario, contrasena);
+            JOptionPane.showMessageDialog(vista, "Vendedor guardado correctamente.");
             limpiar();
             cargarTabla();
         } catch (Exception ex) {
@@ -119,9 +124,10 @@ public class EmpeladoController implements ActionListener {
         }
         if (!validarCampos()) return;
         try {
-            int id = (int) vista.tablaEmpleado.getValueAt(fila, 0);
-            dao.modificar(construirDesdeFormulario(id));
-            JOptionPane.showMessageDialog(vista, "Empleado modificado correctamente.");
+           int id = (int) vista.tablaEmpleado.getValueAt(fila, 0);
+            String nuevaClave = vista.txtContraseña.getText().trim();
+            dao.modificar(construirDesdeFormulario(id), nuevaClave);
+            JOptionPane.showMessageDialog(vista, "Vendedor modificado correctamente.");
             limpiar();
             cargarTabla();
         } catch (Exception ex) {
@@ -178,6 +184,8 @@ public class EmpeladoController implements ActionListener {
         vista.txtNombre.setText("");
         vista.txtTelefono.setText("");
         vista.txtCorreo.setText("");
+        vista.txtUsuario.setText("");
+        vista.txtContraseña.setText("");
         vista.radioVendedor.setSelected(false);
         vista.tablaEmpleado.clearSelection();
     }

@@ -4,7 +4,7 @@
  */
 package controlador;
 
-import controladorVendedor.MenuVendedorController;
+import controladorVendedor.VentasController;
 import interfaz.UsuarioInterfaz;
 import arbol.ArbolBBusqueda;
 import arbol.Nodo;
@@ -12,7 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import modelo.Usuario;
-import vistaVendedor.MenuVendedorView;
+import vistaVendedor.VentasView;
 import vista.MenuView;
 import vista.VistaInicio;
 
@@ -68,9 +68,9 @@ public class UsuarioController implements ActionListener{
                         new MenuController(menu);
                         menu.setVisible(true);
                     } else if (rol == 2) {
-                        MenuVendedorView menuVendedor = new MenuVendedorView();
-                        new MenuVendedorController(menuVendedor);
-                        menuVendedor.setVisible(true);
+                        VentasView ventas = new VentasView();
+                        new VentasController(ventas, usuarioEncontrado);
+                        ventas.setVisible(true);
                     }
 
                     vista.dispose();

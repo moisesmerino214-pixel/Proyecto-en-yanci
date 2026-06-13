@@ -18,6 +18,7 @@ interfaz\UsuarioInterfaz.class
 modeloVendedor\DetalleVenta.class
 DAOVendedor\InventarioVendedorDAO.class
 vista\ClienteVista$comboProducto.class
+vista\EmpleadoVista$6.class
 modelo\Usuario.class
 vista\VistaInicio$1.class
 DAO\UsuarioDAO.class
@@ -27,11 +28,11 @@ controlador\GestionVentasController.class
 modeloVendedor\Ventas.class
 vista\ViewProducto$5.class
 vista\MenuView$7.class
-vistaVendedor\MenuVendedorView$3.class
 interfaz\ClienteInterfaz.class
 vista\ClienteVista.class
 vista\MenuView$1.class
 controlador\UsuarioController.class
+vista\EmpleadoVista$5.class
 DAO\EmpleadoDAO.class
 vista\InventarioView$6.class
 vista\MasVendidosView$1.class
@@ -40,7 +41,6 @@ vista\EmpleadoVista$4.class
 vista\VistaInicio$3.class
 interfaz\InventarioInterfaz.class
 vistaVendedor\VentasView.class
-vistaVendedor\MenuVendedorView$2.class
 DAO\InventarioDAO.class
 vista\ViewProducto$6.class
 vista\ViewProducto.class
@@ -52,7 +52,6 @@ vista\ViewProducto$4.class
 controlador\EmpeladoController.class
 vista\VistaInicio$2.class
 vistaVendedor\InventarioVendedor$2.class
-vistaVendedor\MenuVendedorView$1.class
 controlador\ClienteController.class
 DAO\Conexion.class
 vista\ViewProducto$12.class
@@ -91,7 +90,6 @@ vista\MenuView$4.class
 vista\VentasView$2.class
 vista\ViewProducto$2.class
 arbol\ArbolBinario.class
-controladorVendedor\MenuVendedorController.class
 modelo\ProductoMasVendido.class
 vista\VentasView$3.class
 vista\InventarioView.class
@@ -102,7 +100,6 @@ test\VistaTest$1.class
 interfaz\ProductoInterfaz.class
 vista\InventarioView$4.class
 vistaVendedor\VentasView$2.class
-vistaVendedor\MenuVendedorView.class
 controlador\MenuController.class
 Utilidades\TestRSA.class
 vista\ProveedoresView.class

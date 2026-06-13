@@ -12,8 +12,8 @@ import modelo.Empleado;
  * @author moise
  */
 public interface EmpleadoInterfaz {
-    boolean agregar(Empleado emp) throws Exception;
-    boolean modificar(Empleado emp) throws Exception;
+    boolean agregar(Empleado emp,String nombreUsuario, String contrasena) throws Exception;
+    boolean modificar(Empleado emp, String nuevaContrasena) throws Exception;
     boolean eliminar(int id) throws Exception;
     ArbolBBusqueda<Empleado> listar() throws Exception;
     

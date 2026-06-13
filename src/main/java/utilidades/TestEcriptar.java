@@ -16,7 +16,7 @@ public class TestEcriptar {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String clave = "vendedor123";
+        String clave = "laura123";
         clave= Encriptar.getStringMessageDigest(clave, Encriptar.SHA256);
         System.out.println(clave);
     }

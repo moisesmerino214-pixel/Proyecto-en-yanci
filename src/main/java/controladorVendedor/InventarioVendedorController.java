@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import vistaVendedor.InventarioVendedor;
-import vistaVendedor.MenuVendedorView;
+import vistaVendedor.VentasView;
 
 /**
  *
@@ -18,15 +18,15 @@ import vistaVendedor.MenuVendedorView;
 public class InventarioVendedorController implements ActionListener {
     private InventarioVendedor vista;
     private InventarioVendedorDAO dao;
-    private MenuVendedorView menu;
-
-    public InventarioVendedorController(InventarioVendedor vista, MenuVendedorView menu) {
+    private VentasView ventasPrevias;
+    
+    public InventarioVendedorController(InventarioVendedor vista, VentasView ventasPrevias) {
         this.vista = vista;
+        this.ventasPrevias = ventasPrevias;
         this.dao = new InventarioVendedorDAO();
-        this.menu = menu;
         
         vista.btnBusacr.addActionListener(this);
-        vista.btnSalir.addActionListener(this);
+        vista.btnRegresar.addActionListener(this);
 
         cargarTodo();
     }
@@ -34,7 +34,7 @@ public class InventarioVendedorController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vista.btnBusacr) buscar();
-        if (e.getSource() == vista.btnSalir)  cerrar();
+        if (e.getSource() == vista.btnRegresar)  regresar();
     }
     
     private void cargarTodo() {
@@ -58,9 +58,14 @@ public class InventarioVendedorController implements ActionListener {
         }
     }
     
-    private void cerrar() {
-        javax.swing.SwingUtilities.getWindowAncestor(vista).dispose();
-        menu.setVisible(true);
+    private void regresar() {
+        java.awt.Window ventanaActual = javax.swing.SwingUtilities.getWindowAncestor(vista);
+        if (ventanaActual != null) {
+            ventanaActual.dispose();
+        }
+        if (ventasPrevias != null) {
+            ventasPrevias.setVisible(true);
+        }
     }
 }
     
